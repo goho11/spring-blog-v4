@@ -19,13 +19,6 @@ public class BoardService {
                 .toList();
     }
 
-    public BoardResponse.UpdateFormDTO 게시글수정화면보기(int id) {
-        Board board = boardRepository.findById(id)
-                .orElseThrow(() -> new Exception404("해당 id의 게시글이 없습니다 : " + id));
-
-        return new BoardResponse.UpdateFormDTO(board);
-    }
-
     @Transactional
     public void 게시글수정하기(int id, BorderRequest.UpdateDTO updateDTO) {
         Board board = boardRepository.findById(id)

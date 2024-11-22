@@ -6,21 +6,6 @@ import lombok.Data;
 public class BoardResponse {
 
     @Data
-    public static class UpdateFormDTO {
-        private int id;
-        private String title;
-        private String content;
-        private String createdAt;
-
-        public UpdateFormDTO(Board board) {
-            this.id = board.getId();
-            this.title = board.getTitle();
-            this.content = board.getContent();
-            this.createdAt = Encoding.formatToStr(board);
-        }
-    }
-
-    @Data
     public static class DetailDTO {
         private int id;
         private String title;
@@ -33,17 +18,6 @@ public class BoardResponse {
             this.content = board.getContent();
             // Encoding클래스의 날짜변환 메서드 가져와 적용
             this.createdAt = Encoding.formatToStr(board);
-        }
-    }
-
-    @Data
-    public static class SaveDTO {
-        private int id;
-        private String title;
-
-        public SaveDTO(Board board) {
-            this.id = board.getId();
-            this.title = board.getTitle();
         }
     }
 
